@@ -22,24 +22,55 @@ var body = document.querySelector('body');
 
 // Part 1
 
-
-function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
   // inside, add each land as an article tag
   // inside each article tag include an h1 with the name of the land
   // append middle-earth to your document body
+
+
+
+function makeMiddleEarth() {
+      console.log ("Oh powers of the universe, please help me with this!");
+      // create a section tag with an id of middle-earth
+    // Here I am creating the box and new element name
+  document.createElement('section');
+  document.setAttribute('#id', 'middle-earth');
+  //populating the box, creating a new variable for the contents
+  var insideBox = document.createElement('article');
+  // inside each article tag include an h1 with the name of the land
+  //creating the hOne variable first...
+  var hOne =  document.createElement('h1');
+
+  for (var i = 0; i<lands.length; i++)
+  //creating the named headers
+  hOne.textContent = lands[i];
+  // append middle-earth to your document body
+  body.getElementById('middle-earth').appendChild(hOne);
+
 }
 
 makeMiddleEarth();
-
 
 // Part 2
 
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the first article tag on the page)
   // give each hobbit a class of hobbit
-}
 
+  //creating the list of hobbits
+
+  var hobbitList = document.getElementsByTagName('article');
+  for ( var i =0; i<hobbitList.length; i++)
+  var currentHobbit = hobbitList[i];
+  //creating new Hobbit class
+  var hobbitName = document.createElement;
+  document.setAttribute('class', 'hobbit');
+
+  //adding to page
+  hobbitName.appendChild("<li>"+ currentHobbit + "</>"); /* is it too late to switch to the UX program? jkng, but seriously i think i'm in over my head.*/
+  }
+
+makeHobbits();
 
 // Part 3
 
@@ -48,6 +79,22 @@ function keepItSecretKeepItSafe() {
   // give the div a class of 'magic-imbued-jewelry'
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
   // add the ring as a child of Frodo
+
+
+// create a div with an id of 'the-ring' (creating the box)
+var theRing = document.createElement;
+document.setAttribute('#id', 'the-ring');
+// give the div a class of 'magic-imbued-jewelry'
+theRing.setAttribute('class', 'magic-imbued-jewelry');
+// add the ring as a child of Frodo -?
+frodo.appendChild.(theRing);
+
+
+  
+  // Event handler. When the user clicks on theRing, the nazgulScreech function will run.
+theRing.addEventListener('click', nazgulScreech);
+
+
 }
 
 
@@ -56,7 +103,11 @@ function keepItSecretKeepItSafe() {
 
 function makeBuddies() {
   // create an aside tag
+  var aSide = document.createElement('aside'); //are attributes optional?
   // attach an unordered list of the 'buddies' in the aside
+  //first creating the buddy list
+  var buddyList = document.createElement('ul')
+  
   // insert your aside as a child element of rivendell
 }
 
