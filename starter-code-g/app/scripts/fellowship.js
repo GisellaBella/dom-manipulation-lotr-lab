@@ -28,26 +28,36 @@ var body = document.querySelector('body');
   // inside each article tag include an h1 with the name of the land
   // append middle-earth to your document body
 
-    // creating section tag with id of middle-earth
-      var middleEarth = document.createElement('section');
-      middleEarth.setAttribute('id', 'middleEarth');
 
-    ///creating each land as an article tag
-      for (var i = 0; i < lands.length; i++);{
-      var land = document.createElement('article');
-      var name = document.createTextNode('<h1>'+lands[i]+'</h1>');
-      land.appendChild(name);
-      //adding the lands to middle-earth
-      middleEarth.appendChild(land);
-      }
-   // appending middle-earth to body
-      body.appendChild(middleEarth);
-      
-      }     
+var middleEarth = document.createElement('section');
 
-    console.log ("okay,okay");
+for(var i = 0, len = lands.length; i < len; i++){
 
-    makeMiddleEarth();
+// adding each land as an article tag
+
+var land = document.createElement('article');
+
+// inside each article tag include an h1 with the name of the land
+//creating hd1 
+var h1 = document.createElement('h1');
+//creating names list texNode
+var landNames = document.createTextNode(lands[i]); 
+//sorting out the family dynamics
+h1.appendChild(landNames);
+
+land.appendChild(h1);
+
+middleEarth.appendChild(land);
+
+}
+
+// append middle-earth to your document body
+
+body.appendChild(middleEarth);
+
+}
+
+makeMiddleEarth();
 
 
 // Part 2
@@ -58,22 +68,21 @@ function makeHobbits() {
 
   //creating unorderlist 
   var hobbitList = document.createElement('ul');
-  //creating ul li's
+
   var hobbit = document.createElement('li');
-  //changing class of hobbit
+
   hobbit.classname='hobbit';
 
-console.log ("okay,okay");
-
   for (var i = 0; i < hobbits.length; i++){
-    var hobbitNames = createTextNode(hobbits[i]);
-    hobbit.appendChild(hobbitNames);
+
+    hobbit.textContent=hobbits[i];
     hobbitList.appendChild(hobbit);
   }
-console.log ("okay,okay");
+var theShire = body.querySelectorAll('article')[0];
+theShire.appendChild(hobbitList);
+
 }
 makeHobbits();
-
 
 
 // Part 3
@@ -83,7 +92,23 @@ function keepItSecretKeepItSafe() {
   // give the div a class of 'magic-imbued-jewelry'
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
   // add the ring as a child of Frodo
+
+var theRing = document.createElement('div');
+
+theRing.setAttribute('class', 'magicImbuedJewelry');
+
+theRing.addEventListener('click', nazgulScreech);
+
+var frodo = body.querySelectorAll('li')[0];
+
+frodo.appendChild(theRing);
+
+console.log ("okay,okay");
+
 }
+
+keepItSecretKeepItSafe();
+
 
 
 // Part 4
@@ -93,21 +118,49 @@ function makeBuddies() {
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
+var rivendell = body.querySelectorAll('article')[1];
+
+var buddyBox = document.createElement('aside');
+
+var buddyList = document.createElement('ul');
+
+  for(var i = 0, len = buddies.length; i < len; i++){
+
+
+  var buddy = document.createElement('li');
+
+  buddy.textContent = buddies[i];
+
+  buddyList.appendChild(buddy);
+
+  }
+
+
+buddyBox.appendChild(buddyList);
+
+rivendell.appendChild(buddyBox);
+
 }
 
+makeBuddies ();
 
 // Part 5
 
 
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
-}
+  var strider = rivendell.querySelectorAll('li')[3];
 
+  strider.textContent= 'Aragorn';
+
+}
+beautifulStranger ();
 
 // Part 6
 
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
+  rivendell.appendChild(hobbitList);
 }
 
 
@@ -118,8 +171,16 @@ function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
-}
+var fellowshipMembers = rivendell.querySelectorAll('li');
 
+var theFellowship = document.createElement('div');
+
+  for(var i = 0, len = fellowshipMembers.length; i < len; i++){
+
+  theFellowship.appendChild(fellowshipMembers[i]);
+
+  }
+}
 
 // Part 8
 
