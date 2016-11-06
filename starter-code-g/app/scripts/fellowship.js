@@ -21,35 +21,31 @@ var body = document.querySelector('body');
 
 
 // Part 1
-
+ 
+ function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
   // inside, add each land as an article tag
   // inside each article tag include an h1 with the name of the land
   // append middle-earth to your document body
 
+    // creating section tag with id of middle-earth
+      document.createElement('section');
+      document.setAttribute('id', 'middleEarth');
 
+    ///creating each land as an article tag
+      for (var i = 0; i < lands.length; i++);{
+      var land = document.createElement('article');
+      var name = document.createTextNode('<h1>'+lands[i]+'</h1>');
+      land.appendChild(name);
+      //adding the lands to middle-earth
+      middleEarth.appendChild(land);
+      }
+   // appending middle-earth to body
+      body.appendChild(middleEarth);
+      
+      }     
 
-function makeMiddleEarth() {
-      console.log ("Oh powers of the universe, please help me with this!");
-      // create a section tag with an id of middle-earth
-    // Here I am creating the box and new element name
-  document.createElement('section');
-  document.setAttribute('#id', 'middle-earth');
-  //populating the box, creating a new variable for the contents
-  var insideBox = document.createElement('article');
-  // inside each article tag include an h1 with the name of the land
-  //creating the hOne variable first...
-  var hOne =  document.createElement('h1');
-
-  for (var i = 0; i<lands.length; i++)
-  //creating the named headers
-  hOne.textContent = lands[i];
-  // append middle-earth to your document body
-  body.getElementById('middle-earth').appendChild(hOne);
-
-}
-
-makeMiddleEarth();
+console.log ("okay,okay");
 
 // Part 2
 
@@ -71,6 +67,8 @@ function makeHobbits() {
   }
 
 makeHobbits();
+
+
 
 // Part 3
 
@@ -110,7 +108,6 @@ function makeBuddies() {
   
   // insert your aside as a child element of rivendell
 }
-
 
 // Part 5
 
