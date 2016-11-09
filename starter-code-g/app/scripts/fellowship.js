@@ -113,12 +113,12 @@ keepItSecretKeepItSafe();
 
 // Part 4
 
-
-function makeBuddies() {
+var rivendell = body.querySelectorAll('article')[1];
+function makeBuddies()
+{
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
-var rivendell = body.querySelectorAll('article')[1];
 
 var buddyBox = document.createElement('aside');
 
@@ -149,7 +149,7 @@ makeBuddies ();
 
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
-  var strider = rivendell.querySelectorAll('li')[3];
+var strider = rivendell.querySelectorAll('li')[3];
 
   strider.textContent= 'Aragorn';
 
